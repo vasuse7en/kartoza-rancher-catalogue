@@ -23,7 +23,7 @@ services:
     image: rabbitmq
 
   postgis:
-    image: kartoza/geonode_db
+    image: vasuse7en/geonode_db
     volumes:
       - 'postgis-data:/var/lib/postgresql'
     environment:
@@ -97,7 +97,7 @@ services:
     restart: unless-stopped
 
   qgis-server-backend:
-    image: kartoza/geonode_qgis-server
+    image: vasuse7en/geonode_qgis-server
     volumes:
       - 'django-media-data:/usr/src/app/geonode/uploaded'
       - 'qgis-server-qgis-layer-data:/usr/src/app/geonode/qgis_layer'
@@ -126,8 +126,8 @@ services:
     restart: unless-stopped
 
   django:
-    image: kartoza/geonode_django_geosafe:qgis-server-2.7-stable-1.0
-    #image: kartoza/geonode_django_geosafe
+    image: vasuse7en/geonode_django_geosafe
+    #image: vasuse7en/geonode_django_geosafe
     volumes:
       - 'django-media-data:/usr/src/app/geonode/uploaded'
       - 'django-static-data:/usr/src/app/geonode/static_root'
@@ -168,7 +168,7 @@ services:
       - qgis-server
 
   nginx:
-    image: kartoza/geonode_nginx
+    image: vasuse7en/geonode_nginx
     links:
       - django
     volumes:
@@ -179,7 +179,7 @@ services:
     restart: unless-stopped
 
   celery:
-    image: kartoza/geonode_django_geosafe:qgis-server-2.7-stable-1.0
+    image: vasuse7en/geonode_django_geosafe
     restart: on-failure
     working_dir: /usr/src/app
     volumes:
@@ -217,7 +217,7 @@ services:
       - postgis
       - qgis-server
   inasafe-headless:
-    image: kartoza/geonode_inasafe-headless
+    image: vasuse7en/geonode_inasafe-headless
     restart: on-failure
     working_dir: /home/src/inasafe
     environment:
@@ -242,7 +242,7 @@ services:
       - django
 
   inasafe-headless-analysis:
-    image: kartoza/geonode_inasafe-headless
+    image: vasuse7en/geonode_inasafe-headless
     restart: on-failure
     working_dir: /home/src/inasafe
     environment:
