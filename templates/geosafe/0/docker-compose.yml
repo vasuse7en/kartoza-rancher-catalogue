@@ -152,6 +152,7 @@ services:
       - QGIS_SERVER_URL=http://qgis-server/
       # GeoSAFE Related
       - USE_GEOSAFE=True
+      - USE_FLUENTGRID=True
       - USE_LAYER_FILE_ACCESS=True
       # Base directory that will be used by InaSAFE Headless
       - INASAFE_LAYER_DIRECTORY=/home/geosafe/media/
@@ -202,6 +203,7 @@ services:
       - USE_GEOSAFE=False
       # GeoSAFE Related
       - USE_GEOSAFE=True
+      - USE_FLUENTGRID=True
       - USE_LAYER_FILE_ACCESS=True
       # Base directory that will be used by InaSAFE Headless
       - INASAFE_LAYER_DIRECTORY=/home/geosafe/media/
