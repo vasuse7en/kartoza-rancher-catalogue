@@ -126,7 +126,7 @@ services:
     restart: unless-stopped
 
   django:
-    image: vasuse7en/geonode_django_geosafe:integration
+    image: vasuse7en/geonode_django_geosafe:initial-stable-0.1
     #image: vasuse7en/geonode_django_geosafe
     volumes:
       - 'django-media-data:/usr/src/app/geonode/uploaded'
@@ -180,7 +180,7 @@ services:
     restart: unless-stopped
 
   celery:
-    image: vasuse7en/geonode_django_geosafe:integration
+    image: vasuse7en/geonode_django_geosafe:initial-stable-0.1
     restart: on-failure
     working_dir: /usr/src/app
     volumes:
